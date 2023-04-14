@@ -7,7 +7,7 @@
 
 ## 介绍
 
-[ENGLISH README](https://github.com/vah13/jar-analyzer/README_EN.md)
+[ENGLISH README](https://github.com/vah13/jar-analyzer/blob/master/README_EN.md)
 
 简单的介绍：https://mp.weixin.qq.com/s/Rrx6x5M_28YRcQQCdxuEeQ
 
