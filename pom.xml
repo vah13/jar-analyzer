@@ -83,6 +83,8 @@
             <groupId>lib</groupId>
             <artifactId>jsyntaxpane</artifactId>
             <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/syntax-panel.jar</systemPath>
         </dependency>
     </dependencies>
 

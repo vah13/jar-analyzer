@@ -50,9 +50,9 @@ public class ELForm {
                 ExpressionParser parser = new SpelExpressionParser();
                 String spel = elEditor.getText();
                 parser.parseExpression(spel);
-                JOptionPane.showMessageDialog(this.elEditor, "解析通过，正确的表达式");
+                JOptionPane.showMessageDialog(this.elEditor, "Parsing passed, the correct expression");
             } catch (Exception ignored) {
-                JOptionPane.showMessageDialog(this.elEditor, "解析异常，错误的表达式");
+                JOptionPane.showMessageDialog(this.elEditor, "Parse exception, bad expression");
             }
         });
 
@@ -68,7 +68,7 @@ public class ELForm {
                 ctx.setVariable("method", m);
                 value = exp.getValue(ctx);
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this.elEditor, "语法错误");
+                JOptionPane.showMessageDialog(this.elEditor, "Grammatical errors");
                 return;
             }
 
@@ -87,14 +87,14 @@ public class ELForm {
                 }
 
                 if (searchList.size() == 0) {
-                    JOptionPane.showMessageDialog(this.elEditor, "没有找到结果");
+                    JOptionPane.showMessageDialog(this.elEditor, "No results found");
                 } else {
-                    JOptionPane.showMessageDialog(this.elEditor, "搜索成功");
+                    JOptionPane.showMessageDialog(this.elEditor, "Search succeeded");
                 }
 
                 instance.resultList.setModel(searchList);
             } else {
-                JOptionPane.showMessageDialog(this.elEditor, "错误的表达式");
+                JOptionPane.showMessageDialog(this.elEditor, "Wrong expression");
             }
         });
     }

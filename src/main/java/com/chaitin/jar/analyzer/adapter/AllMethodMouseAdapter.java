@@ -70,7 +70,7 @@ public class AllMethodMouseAdapter extends MouseAdapter {
                     classPath = String.format("temp%sWEB-INF%sclasses%s%s.class",
                             File.separator, File.separator, File.separator, tempPath);
                     if (!Files.exists(Paths.get(classPath))) {
-                        JOptionPane.showMessageDialog(form.jarAnalyzerPanel, "缺少依赖");
+                        JOptionPane.showMessageDialog(form.jarAnalyzerPanel, "Missing dependencies");
                         return;
                     }
                 }
@@ -177,7 +177,7 @@ public class AllMethodMouseAdapter extends MouseAdapter {
                     } catch (IOException ignored) {
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "无法反编译");
+                    JOptionPane.showMessageDialog(null, "Can not decompile");
                     return;
                 }
                 total = total.replace("\r\n", "\n");

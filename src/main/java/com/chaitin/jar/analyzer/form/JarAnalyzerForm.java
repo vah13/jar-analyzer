@@ -188,7 +188,7 @@ public class JarAnalyzerForm {
             }
 
             if (!checkJarSize()) {
-                JOptionPane.showMessageDialog(jarAnalyzerPanel, "输入的Jar包过大");
+                JOptionPane.showMessageDialog(jarAnalyzerPanel, "The input Jar package is too large");
                 return;
             }
 
@@ -215,7 +215,7 @@ public class JarAnalyzerForm {
             }
 
             jarInfoResultText.setText(String.format(
-                    "Jar包数量: %d   类的数量: %s   方法的数量: %s",
+                    "Number of jars: %d Number of classes: %s Number of methods: %s",
                     totalJars, discoveredClasses.size(), discoveredMethods.size()
             ));
             progress.setValue(80);
@@ -303,9 +303,9 @@ public class JarAnalyzerForm {
 
                 if (searchList.size() == 0 || searchList.isEmpty()) {
                     JOptionPane.showMessageDialog(this.jarAnalyzerPanel,
-                            "没有结果!\n" +
-                                    "1. 也许你选错了搜索方式\n" +
-                                    "2. 检查你输入的信息");
+                            "No result!\n" +
+                                    "1. Maybe you chose the wrong search method\n" +
+                                    "2. Check the information you entered");
                 }
 
                 resultList.setModel(searchList);
@@ -335,7 +335,7 @@ public class JarAnalyzerForm {
                 List<MethodReference> mList = new ArrayList<>();
                 String search = otherText.getText();
                 if (search == null || search.trim().equals("")) {
-                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "请输入其他搜索内容");
+                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "Please enter another search content");
                     return;
                 }
                 if (search.startsWith("'") && search.endsWith("'")) {
@@ -358,7 +358,7 @@ public class JarAnalyzerForm {
                     }
                 }
                 if (mList.size() == 0) {
-                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "没有搜到结果");
+                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "No results found");
                     resultList.setModel(null);
                     return;
                 }
@@ -375,7 +375,7 @@ public class JarAnalyzerForm {
                 List<MethodReference> mList = new ArrayList<>();
                 String search = otherText.getText();
                 if (search == null || search.trim().equals("")) {
-                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "请输入其他搜索内容");
+                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "Please enter another search content");
                     return;
                 }
                 if (search.startsWith("'") && search.endsWith("'")) {
@@ -398,7 +398,7 @@ public class JarAnalyzerForm {
                     }
                 }
                 if (mList.size() == 0) {
-                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "没有搜到结果");
+                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "No results found");
                     resultList.setModel(null);
                     return;
                 }
@@ -415,7 +415,7 @@ public class JarAnalyzerForm {
 
                 String search = otherText.getText();
                 if (search == null || search.trim().equals("")) {
-                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "请输入其他搜索内容");
+                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "Please enter another search content");
                     return;
                 }
 
@@ -437,7 +437,7 @@ public class JarAnalyzerForm {
                                     }
                                     if (found) {
                                         fis.close();
-                                        JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "搜索到此字符串");
+                                        JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "Searched for this string");
                                         return;
                                     }
                                 }
@@ -455,12 +455,12 @@ public class JarAnalyzerForm {
                                     }
                                 }
                                 if (found) {
-                                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "搜索到此字符串");
+                                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "Searched for this string");
                                     return;
                                 }
                             }
                         }
-                        JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "找不到");
+                        JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "Can't find");
                         return;
                     } catch (Exception ignored) {
                     }
@@ -471,7 +471,7 @@ public class JarAnalyzerForm {
                 List<MethodReference> mList = new ArrayList<>();
                 String search = otherText.getText();
                 if (search == null || search.trim().equals("")) {
-                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "请输入其他搜索内容");
+                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "Please enter another search content");
                     return;
                 }
                 for (ClassFile file : classFileList) {
@@ -484,7 +484,7 @@ public class JarAnalyzerForm {
                     }
                 }
                 if (mList.size() == 0) {
-                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "没有搜到结果");
+                    JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "No results found");
                     resultList.setModel(null);
                     return;
                 }
@@ -522,7 +522,7 @@ public class JarAnalyzerForm {
                 classPath = String.format("temp%sWEB-INF%sclasses%s%s.class",
                         File.separator, File.separator, File.separator, tempPath);
                 if (!Files.exists(Paths.get(classPath))) {
-                    JOptionPane.showMessageDialog(jarAnalyzerPanel, "缺少依赖");
+                    JOptionPane.showMessageDialog(jarAnalyzerPanel, "Missing dependencies");
                     return;
                 }
             }
@@ -623,7 +623,7 @@ public class JarAnalyzerForm {
                 } catch (IOException ignored) {
                 }
             } else {
-                JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "无法反编译");
+                JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "Can not decompile");
                 return;
             }
             editorPane.setText(total);
@@ -701,7 +701,7 @@ public class JarAnalyzerForm {
                 classPath = String.format("temp%sWEB-INF%sclasses%s%s.class",
                         File.separator, File.separator, File.separator, tempPath);
                 if (!Files.exists(Paths.get(classPath))) {
-                    JOptionPane.showMessageDialog(jarAnalyzerPanel, "缺少依赖");
+                    JOptionPane.showMessageDialog(jarAnalyzerPanel, "Missing dependencies");
                     return;
                 }
             }
@@ -807,7 +807,7 @@ public class JarAnalyzerForm {
                 } catch (IOException ignored) {
                 }
             } else {
-                JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "无法反编译");
+                JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "Can not decompile");
                 return;
             }
             total = total.replace("\r\n", "\n");
@@ -909,7 +909,7 @@ public class JarAnalyzerForm {
     public int find(String total, String methodName, int paramNum) {
         // 以第一处方法名索引开始搜索
         for (int i = total.indexOf(methodName);
-            // 循环找直到找不到为止
+            // 循环找直到Can't find为止
              i >= 0; i = total.indexOf(methodName, i + 1)) {
             // 如果方法名上一位是空格且下一位是字符
             // 认为找到的方法（定义或某些情况的调用）
@@ -1043,7 +1043,7 @@ public class JarAnalyzerForm {
                 if (selRow != -1) {
                     if (e.getClickCount() == 2) {
                         if (selPath == null) {
-                            JOptionPane.showMessageDialog(jarAnalyzerPanel, "选择错误");
+                            JOptionPane.showMessageDialog(jarAnalyzerPanel, "Wrong selection");
                             return;
                         }
 
@@ -1065,7 +1065,7 @@ public class JarAnalyzerForm {
 
                         Path thePath = Paths.get(filePath);
                         if (!Files.exists(thePath)) {
-                            JOptionPane.showMessageDialog(jarAnalyzerPanel, "文件不存在");
+                            JOptionPane.showMessageDialog(jarAnalyzerPanel, "File does not exist");
                             return;
                         }
 
@@ -1112,18 +1112,18 @@ public class JarAnalyzerForm {
         allMethodList.addMouseListener(new AllMethodMouseAdapter(this));
 
         directSearchRadioButton.addActionListener(e -> JOptionPane.showMessageDialog(this.jarAnalyzerPanel,
-                "什么是直接搜索:\n" +
-                        "直接搜索某个类的某个方法在哪里定义"));
+                "What is direct search:\n" +
+                        "Directly search where a method of a class is defined"));
 
         callSearchRadioButton.addActionListener(e -> JOptionPane.showMessageDialog(this.jarAnalyzerPanel,
-                "什么是搜索调用:\n" +
-                        "搜索某个类的某个方法在哪些地方被调用"));
+                "What is a search call:\n" +
+                        "Search where a method of a class is called"));
         binaryRadioButton.addActionListener(e -> JOptionPane.showMessageDialog(this.jarAnalyzerPanel,
-                "什么是二进制搜索:\n" +
-                        "不返回具体信息而是告诉你Jar包是否包含指定字符串"));
+                "What is Binary Search:\n" +
+                        "Instead of returning specific information, it tells you whether the Jar package contains the specified string"));
         greatRadioButton.addActionListener(e -> JOptionPane.showMessageDialog(this.jarAnalyzerPanel,
-                "什么是无脑搜索:\n" +
-                        "任何地方（参数名/属性/方法名/字符串/等）只要包含指定字符串即可"));
+                "What is brainless search:\n" +
+                        "Anywhere (parameter name/property/method name/string/etc.) as long as it contains the specified string"));
 
         innerJarsCheckBox.addActionListener(e -> {
             innerJars = innerJarsCheckBox.isSelected();
@@ -1131,9 +1131,9 @@ public class JarAnalyzerForm {
                 return;
             }
             JOptionPane.showMessageDialog(this.jarAnalyzerPanel,
-                    "什么是处理内部依赖Jar:\n" +
-                            "在一个Jar中也许存在很多的依赖Jar\n" +
-                            "如果你选择把这些Jar也都加入分析任务中这将会比较耗时");
+                    "What is handling internal dependencies Jar:\n" +
+                            "There may be many dependencies in a Jar Jar\n" +
+                            "If you choose to add these Jars to the analysis task, it will be time-consuming");
         });
         deleteLogsWhenExitCheckBox.setSelected(true);
         deleteLogs = true;
@@ -1160,7 +1160,7 @@ public class JarAnalyzerForm {
 
         showByteCodeButton.addActionListener(e -> {
             if (curRes == null) {
-                JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "当前的方法为空");
+                JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "The current method is empty");
                 return;
             }
             JFrame frame = new JFrame("Show Bytecode");
@@ -1187,7 +1187,7 @@ public class JarAnalyzerForm {
 
         showASMCodeButton.addActionListener(e -> {
             if (curRes == null) {
-                JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "当前的方法为空");
+                JOptionPane.showMessageDialog(this.jarAnalyzerPanel, "The current method is empty");
                 return;
             }
             JFrame frame = new JFrame("Show ASM Code");
@@ -1228,9 +1228,9 @@ public class JarAnalyzerForm {
 
                         if (!ver.equals(Const.CurVersion)) {
                             String output;
-                            output = String.format("新版本！\n%s: %s\n%s: %s\n%s",
-                                    "您当前的版本", Const.CurVersion,
-                                    "目前最新版本", ver,
+                            output = String.format("New version！\n%s: %s\n%s: %s\n%s",
+                                    "Your current version", Const.CurVersion,
+                                    "The latest version", ver,
                                     "https://github.com/4ra1n/jar-analyzer/releases/latest");
                             JOptionPane.showMessageDialog(instance.jarAnalyzerPanel, output);
 
@@ -1251,8 +1251,8 @@ public class JarAnalyzerForm {
 
     private static JMenu createAboutMenu() {
         try {
-            JMenu aboutMenu = new JMenu("帮助");
-            JMenuItem bugItem = new JMenuItem("报告bug");
+            JMenu aboutMenu = new JMenu("Help");
+            JMenuItem bugItem = new JMenuItem("Report bugs");
             InputStream is = JarAnalyzerForm.class.getClassLoader().getResourceAsStream("issue.png");
             if (is == null) {
                 return null;
@@ -1270,7 +1270,7 @@ public class JarAnalyzerForm {
                 }
             });
 
-            JMenuItem authorItem = new JMenuItem("项目地址");
+            JMenuItem authorItem = new JMenuItem("Project address");
             is = JarAnalyzerForm.class.getClassLoader().getResourceAsStream("address.png");
             if (is == null) {
                 return null;
@@ -1288,7 +1288,7 @@ public class JarAnalyzerForm {
                 }
             });
 
-            JMenuItem normalItem = new JMenuItem("常见问题");
+            JMenuItem normalItem = new JMenuItem("Common problem");
             is = JarAnalyzerForm.class.getClassLoader().getResourceAsStream("normal.png");
             if (is == null) {
                 return null;
@@ -1314,7 +1314,7 @@ public class JarAnalyzerForm {
 
     private static JMenu createVersionMenu() {
         try {
-            JMenu verMenu = new JMenu("版本");
+            JMenu verMenu = new JMenu("Version");
             JMenuItem jarItem = new JMenuItem(Const.JarAnalyzerVersion);
             InputStream is = JarAnalyzerForm.class.getClassLoader().getResourceAsStream("ver.png");
             if (is == null) {
@@ -1323,7 +1323,7 @@ public class JarAnalyzerForm {
             ImageIcon imageIcon = new ImageIcon(ImageIO.read(is));
             jarItem.setIcon(imageIcon);
 
-            JMenuItem downItem = new JMenuItem("验证最新版");
+            JMenuItem downItem = new JMenuItem("Verify latest version");
             downItem.setIcon(imageIcon);
             downItem.addActionListener(e -> {
                 OkHttpClient client = new OkHttpClient();
@@ -1345,7 +1345,7 @@ public class JarAnalyzerForm {
                     public void onResponse(Call call, Response response) {
                         try {
                             if (response.body() == null) {
-                                JOptionPane.showMessageDialog(instance.jarAnalyzerPanel, "网络错误");
+                                JOptionPane.showMessageDialog(instance.jarAnalyzerPanel, "Network Error");
                             }
                             String body = response.body().string();
                             String ver = body.split("\"tag_name\":")[1].split(",")[0];
@@ -1353,8 +1353,8 @@ public class JarAnalyzerForm {
 
                             String output;
                             output = String.format("%s: %s\n%s: %s",
-                                    "您当前的版本", Const.CurVersion,
-                                    "目前最新版本", ver);
+                                    "Your current version", Const.CurVersion,
+                                    "The latest version", ver);
                             JOptionPane.showMessageDialog(instance.jarAnalyzerPanel, output);
                         } catch (Exception ex) {
                             JOptionPane.showMessageDialog(instance.jarAnalyzerPanel, ex.toString());
