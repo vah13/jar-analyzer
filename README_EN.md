@@ -9,8 +9,6 @@
 
 A brief introduction: https://mp.weixin.qq.com/s/Rrx6x5M_28YRcQQCdxuEeQ
 
-There is no English document, foreigners please translate by themselves
-
 A GUI tool for analyzing `jar` packages, especially suitable for code security auditing. Multiple `jar` files can be analyzed at the same time, and the target method can be easily searched.
 It supports decompiling bytecode and automatically constructs the relationship between classes and methods, helping Java security researchers work more efficiently.
 
